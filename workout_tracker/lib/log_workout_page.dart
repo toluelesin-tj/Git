@@ -118,14 +118,11 @@ class _LogWorkoutPageState extends State<LogWorkoutPage> {
 
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(123, 234, 123, 45),
-                  foregroundColor: Colors.white,
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  textStyle: TextStyle(fontSize: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
+                  padding: EdgeInsets.symmetric(vertical: 16), 
+                    textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold), 
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12)
+                    )),
             onPressed: _saveWorkout,
             child: Text('✅ Save Workout'),
           ),
@@ -176,7 +173,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), // make it have a nice border
-      color: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
+      color: Color(0xFFE6F0FF), // soft light blue
       margin: const EdgeInsets.only(bottom: 20),
       child: Padding(
         padding: const EdgeInsets.all(12),

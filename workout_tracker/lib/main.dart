@@ -16,48 +16,49 @@ class MyApp extends StatelessWidget { // Defines new app that represents the who
   Widget build(BuildContext context) { // modifying the build method from StatelessWidget using override and this build method creates the UI for the project
     return MaterialApp( // root widget of app
         theme: ThemeData(
-          scaffoldBackgroundColor: Color(0xFFF4F9FF),
-          primaryColor: Color(0xFF4A90E2),
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Color(0xFF4A90E2),
-            primary: Color(0xFF4A90E2),
-            secondary: Color(0xFF7FB3FF),
-            background: Color(0xFFF4F9FF),
-          ),
-          textTheme: TextTheme(
-            bodyLarge: TextStyle(color: Color(0xFF1E2A38)),  // rich navy-gray
-            bodyMedium: TextStyle(color: Color(0xFF1E2A38)),
-            titleLarge: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF1E2A38),
-            ),
-          ),
-          inputDecorationTheme: InputDecorationTheme(
-            filled: true,
-            fillColor: Colors.white,
-            labelStyle: TextStyle(color: Color(0xFF5C6B84)),  // friendlier gray-blue
-            hintStyle: TextStyle(color: Color(0xFF5C6B84)),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF4A90E2),
-              foregroundColor: Colors.white,
-              padding: EdgeInsets.symmetric(vertical: 14),
-              textStyle: TextStyle(fontSize: 16),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
-          ),
-          snackBarTheme: SnackBarThemeData(
-            backgroundColor: Color(0xFF4A90E2),
-            contentTextStyle: TextStyle(color: Colors.white),
+        scaffoldBackgroundColor: Color(0xFFF4F9FF),
+        primaryColor: Color(0xFF4A90E2),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color(0xFF4A90E2),
+          primary: Color(0xFF4A90E2),
+          secondary: Color(0xFFE6F0FF),
+          background: Color(0xFFF4F9FF),
+        ),
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Color(0xFF1E2A38)),
+          bodyMedium: TextStyle(color: Color(0xFF1E2A38)),
+          titleLarge: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF1E2A38),
           ),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.white,
+          labelStyle: TextStyle(color: Color(0xFF5C6B84)),
+          hintStyle: TextStyle(color: Color(0xFF5C6B84)),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xFF4A90E2),
+            foregroundColor: Colors.white,
+            padding: EdgeInsets.symmetric(vertical: 14),
+            textStyle: TextStyle(fontSize: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+        snackBarTheme: SnackBarThemeData(
+          backgroundColor: Color(0xFF4A90E2),
+          contentTextStyle: TextStyle(color: Colors.white),
+        ),
+      ),
+
       debugShowCheckedModeBanner: false, // Removes the debug banner
       home: WorkoutHomePage(), // Sets the home screen
     );
@@ -108,35 +109,39 @@ class WorkoutHomePage extends StatelessWidget {
             },
             ),
           SizedBox(height: 20), // Adds spacing between buttons
-          ElevatedButton(
+          BigActionButton(
+            text: 'Your Profile Page',
+            icon: Icons.person,
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ProfilePage()),
               );
             },
-            child: Text('Your Profile Page'),
-          ),
+            ),
           SizedBox(height: 20), // Adds spacing between buttons
-          ElevatedButton(
+          BigActionButton(
+            text: '🎯 Challenges',
+            icon: Icons.flag,
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ChallengesPage()),
               );
             },
-            child: Text('Go to Challenges Page'),
-          ),
+            ),
           SizedBox(height: 20), // Adds spacing between buttons
-          ElevatedButton(
+          BigActionButton(
+            text: 'Rewards',
+            icon: Icons.cabin,
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => RewardsPage()),
               );
             },
-            child: Text('Streaks & Rewards Page'),
-          ),
+            ),
+          SizedBox(height: 20), // Adds spacing between buttons
         ],
       ),
     );
