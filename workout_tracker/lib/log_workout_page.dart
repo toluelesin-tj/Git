@@ -176,6 +176,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), // make it have a nice border
+      color: Theme.of(context).colorScheme.secondary.withOpacity(0.1),
       margin: const EdgeInsets.only(bottom: 20),
       child: Padding(
         padding: const EdgeInsets.all(12),
